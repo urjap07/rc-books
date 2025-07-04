@@ -1,0 +1,140 @@
+body {
+  background: #232946;
+  color: #fff;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.title {
+  text-align: center;
+}
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.book-card {
+  background: #181828;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  width: 220px;
+  padding: 18px 12px 20px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.book-cover {
+  width: 196px;
+  height: 294px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  background: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.book-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-align: center;
+  color: #fff;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-link {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: color 0.2s;
+}
+
+.book-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.search-container {
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 40px 0 32px 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
+.search-icon {
+  position: relative;
+  left: 38px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 500px;
+  padding: 14px 18px 14px 48px;
+  border-radius: 16px;
+  border: none;
+  background: #fff;
+  color: #232946;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.search-input:focus {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.16);
+}
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 48px;
+  color: #e53935;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.no-results-icon {
+  margin-bottom: 16px;
+}
+
+.no-results-icon svg {
+  width: 72px;
+  height: 72px;
+  stroke: #fff;
+  opacity: 0.95;
+}
+
+.no-results-message {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 8px;
+}
