@@ -17,8 +17,8 @@ function BookGrid() {
     return (
         <>
             {/* Heading */}
-            <div className="flex justify-center mt-6">
-                <h1 className="text-center text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.15] pb-1 grad-text drop-shadow-[0_2px_8px_rgba(56,189,248,0.35)]">
+            <div className="flex justify-center mt-6 pb-3" style={{ overflow: 'visible' }}>
+                <h1 className="inline-block text-center text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.5] pb-3 mb-2 grad-text drop-shadow-[0_2px_8px_rgba(56,189,248,0.35)]" style={{ overflow: 'visible' }}>
                     Shri Raj Pustak
                 </h1>
             </div>
