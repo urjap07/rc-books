@@ -1,140 +1,117 @@
+/* Global glass/liquid theme */
 body {
-  background: #232946;
-  color: #fff;
   margin: 0;
+  color: #fff;
   font-family: 'Segoe UI', Arial, sans-serif;
-}
-.title {
-  text-align: center;
-}
-.book-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: center;
-  padding: 32px 0;
+  background: radial-gradient(1200px 800px at 10% 10%, rgba(109, 40, 217, 0.25), transparent 50%),
+              radial-gradient(900px 700px at 90% 20%, rgba(14, 165, 233, 0.25), transparent 55%),
+              radial-gradient(1000px 900px at 30% 90%, rgba(236, 72, 153, 0.18), transparent 55%),
+              linear-gradient(135deg, #0b1020 0%, #141a33 35%, #0f1430 100%);
+  min-height: 100vh;
 }
 
-.book-card {
-  background: #181828;
-  border-radius: 20px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-  width: 220px;
-  padding: 18px 12px 20px 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.book-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-}
-
-.book-cover {
-  width: 196px;
-  height: 294px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 16px;
-  background: #222;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.book-card-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.book-title {
-  font-size: 1.15rem;
-  font-weight: bold;
-  margin: 0 0 10px 0;
-  text-align: center;
-  color: #fff;
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.book-link {
-  color: #61dafb;
-  text-decoration: none;
-  font-weight: 500;
-  margin-top: 8px;
-  transition: color 0.2s;
-}
-
-.book-link:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.search-container {
-  width: 100vw;
-  max-width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: 40px 0 32px 0;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-}
-
-.search-icon {
-  position: relative;
-  left: 38px;
-  z-index: 2;
+/* Animated subtle sheen over the page */
+.surface-sheen::before {
+  content: "";
+  position: fixed;
+  inset: -10%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.08));
+  filter: blur(40px);
   pointer-events: none;
+  animation: sheenMove 14s linear infinite;
 }
 
-.search-input {
-  width: 500px;
-  padding: 14px 18px 14px 48px;
-  border-radius: 16px;
-  border: none;
-  background: #fff;
-  color: #232946;
-  font-size: 1.1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+@keyframes sheenMove {
+  0% { transform: translateX(-10%) translateY(-5%); }
+  50% { transform: translateX(10%) translateY(5%); }
+  100% { transform: translateX(-10%) translateY(-5%); }
+}
+
+/* Glass containers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border-radius: 20px;
+}
+
+.glass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(2, 6, 23, 0.45), 0 2px 0 rgba(255,255,255,0.08) inset;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 50px rgba(2, 6, 23, 0.55);
+}
+
+/* Glow border accent */
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.12) inset, 0 0 32px rgba(56,189,248,0.25);
+}
+
+/* Liquid blobs for decorative background */
+.liquid-blob {
+  position: absolute;
+  filter: blur(32px);
+  opacity: .55;
+  border-radius: 9999px;
+  mix-blend-mode: screen;
+}
+
+.blob-pink { background: radial-gradient(circle at 30% 30%, #ec4899, rgba(236,72,153,.15)); }
+.blob-cyan { background: radial-gradient(circle at 30% 30%, #22d3ee, rgba(34,211,238,.15)); }
+.blob-violet { background: radial-gradient(circle at 30% 30%, #8b5cf6, rgba(139,92,246,.15)); }
+
+@keyframes floaty {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-16px) translateX(8px) scale(1.06); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+.animate-floaty { animation: floaty 10s ease-in-out infinite; }
+
+/* Inputs */
+.glass-input {
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(255,255,255,0.9);
+  color: #0f172a;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.18);
+  transition: box-shadow .2s ease, transform .15s ease;
+}
+.glass-input:focus {
   outline: none;
-  transition: box-shadow 0.2s;
+  box-shadow: 0 12px 36px rgba(56,189,248,0.35), 0 0 0 3px rgba(56,189,248,0.35);
 }
 
-.search-input:focus {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.16);
+/* Glass button */
+.glass-button {
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(255,255,255,0.9);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.18), inset 0 1px 0 rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.glass-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(56,189,248,0.35), inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
-.no-results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 48px;
-  color: #e53935;
-  font-size: 1.3rem;
-  font-weight: 500;
-}
-
-.no-results-icon {
-  margin-bottom: 16px;
-}
-
-.no-results-icon svg {
-  width: 72px;
-  height: 72px;
-  stroke: #fff;
-  opacity: 0.95;
-}
-
-.no-results-message {
-  color: #fff;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 8px;
+/* Gradient text utility */
+.grad-text {
+  background: linear-gradient(92deg, #a78bfa, #22d3ee, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

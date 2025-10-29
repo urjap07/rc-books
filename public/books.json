@@ -11,9 +11,9 @@
     "cover": "14 Raj Lok Details.jpg"
   },
   {
-    "title": "14Gunsthanak",
-    "pdf": "14Gunsthanak.pdf",
-    "cover": "14Gunsthanak.jpg"
+    "title": "14 Gunsthanak",
+    "pdf": "14 Gunsthanak.pdf",
+    "cover": "14 Gunsthanak.jpg"
   },
   {
     "title": "18 Paapsthanak",
@@ -94,6 +94,11 @@
     "title": "Bodhamrut Part 2",
     "pdf": "Bodhamrut Part 2.pdf",
     "cover": "Bodhamrut Part 2.jpg"
+  },
+  {
+    "title": "Bodhamrut Part 3",
+    "pdf": "Bodhamrut Part 3.pdf",
+    "cover": "Bodhamrut Part 3.png"
   },
   {
     "title": "Brahmachariji Sachitra Jeevan Darshan",
@@ -341,9 +346,19 @@
     "cover": "Shrimad Rajchandraji Vachanamrut - Hindi.jpg"
   },
   {
+    "title": "Shrimad Rajchandraji Vachanamrut - Gujarati",
+    "pdf": "Shrimad Rajchandraji Vachanamrut - Gujarati.pdf",
+    "cover": "Shrimad Rajchandraji Vachanamrut - Gujarati.png"	
+  },
+  {
     "title": "Tattvagyan",
     "pdf": "Tattvagyan.pdf",
     "cover": "Tattvagyan.jpg"
+  },
+  {
+    "title": "Jain Tattva Parichay",
+    "pdf": "Jain Tattva Parichay.pdf",
+    "cover": "Jain Tattva Parichay.png"
   },
   {
     "title": "Updesh Chhaya",

@@ -17,13 +17,15 @@ function BookGrid() {
     return (
         <>
             {/* Heading */}
-            <h1 className="text-5xl font-extrabold text-center mt-8 mb-4 tracking-tight text-white drop-shadow-lg">
-                Shri Raj Pustak
-            </h1>
+            <div className="flex justify-center mt-6">
+                <h1 className="text-center text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.15] pb-1 grad-text drop-shadow-[0_2px_8px_rgba(56,189,248,0.35)]">
+                    Shri Raj Pustak
+                </h1>
+            </div>
             <br />
             {/* Search Box with clear icon */}
             <div className="flex justify-center mb-6">
-                <div className="relative w-full max-w-2xl">
+                <div className="relative w-full max-w-2xl glass-panel px-3 py-3">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                         <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <circle cx="11" cy="11" r="8" />
@@ -35,7 +37,7 @@ function BookGrid() {
                         placeholder="Search books..."
                         value={search}
                         onChange={e => setSearch(e.target.value)}
-                        className="w-full pl-12 pr-12 py-4 rounded-2xl bg-white/80 text-gray-900 text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
+                        className="w-full pl-12 pr-12 py-4 glass-input text-lg"
                     />
                     {search && (
                         <button

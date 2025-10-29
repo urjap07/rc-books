@@ -1,7 +1,7 @@
 function BookCard({ book }) {
     const hasCover = book.cover && book.cover !== "Poster Not Available";
     return (
-        <div className="backdrop-blur-md bg-white/10 border border-white/10 rounded-2xl shadow-xl w-[220px] flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
+        <div className="glass-card glow-border w-[220px] flex flex-col items-center transition-all duration-300">
             <a
                 href={`/books/${book.pdf}`}
                 target="_blank"
@@ -26,7 +26,7 @@ function BookCard({ book }) {
                     href={`/books/${book.pdf}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sky-400 font-semibold mt-2 hover:text-white transition-colors underline underline-offset-4"
+                    className="text-sky-300 font-semibold mt-2 hover:text-white transition-colors underline underline-offset-4"
                 >
                     Read / Download
                 </a>
